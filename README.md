@@ -43,16 +43,24 @@ Weather in Khopoli :
 API_KEY=your_api_key_here
 ```
 🐞Incase of failure in functioning of API Key:
+ 
   Debug by placing following code in main.py below ''response = requests.get(base_url, params=params)'' :-
 
-  '''
+
     print("Request URL:", response.url)  # Debug
+   
     print("Response Content:", response.text)  # Debug
-  '''
-If any suggestions keep it to yourself man!
-It was built just for Practice purpose 🤺
-Just kidding!
-Will try to enhance it further.🪄
+    
+
+## ✨Feedback:
+
+  If any suggestions keep it to yourself man!🤺
+
+  It was built just for Practice purpose 🏋️‍♂️
+
+  Just kidding! Suggestions are always appreciated.
+
+  Will try to enhance it further.🪄
 
 ## 👨‍💻 Author:
 [Sarthak Deshmukh](https://github.com/sarthakkkk7)
