@@ -1,0 +1,58 @@
+# 🌦️ Weather App (Python + OpenWeatherMap API)
+
+A simple Python project that fetches real-time weather data from OpenWeatherMap API and displays temperature, humidity, and weather conditions for a given city.
+
+## 🔧 Features:
+- Secure API key handling via `.env`
+- Uses `requests` to make HTTP calls
+- Parses JSON response and presents data
+- Basic error handling included
+
+## 🛠 Requirements:
+- Python 3.x
+- `requests`
+- `python-dotenv`
+
+## 🚀 Setup & Run
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## 📁 File Structure:
+- `main.py` — Main logic
+- `.env` — Your API key (add your own!)
+- `requirements.txt` — Dependencies
+- `.gitignore` — Prevents `.env` from uploading
+
+## ✅ Output Example:
+```
+Enter a city name: Khopoli 
+
+Weather in Khopoli :
+
+🌡️ Temperature: 26.42°C (Feels like 26.42°C)
+☁️ Condition: light rain
+💧 Humidity: 93%
+💨 Wind Speed: 1.75 m/s
+🌧️ Rain: 0.42 mm in the last hour
+```
+
+📌 *Note:* Get your API key from https://openweathermap.org/api and put it inside `.env` like:
+```
+API_KEY=your_api_key_here
+```
+🐞Incase of failure in functioning of API Key:
+  Debug by placing following code in main.py below ''response = requests.get(base_url, params=params)'' :-
+
+  '''
+    print("Request URL:", response.url)  # Debug
+    print("Response Content:", response.text)  # Debug
+  '''
+If any suggestions keep it to yourself man!
+It was built just for Practice purpose 🤺
+Just kidding!
+Will try to enhance it further.🪄
+
+## 👨‍💻 Author:
+[Sarthak Deshmukh](https://github.com/sarthakkkk7)
