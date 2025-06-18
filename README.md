@@ -7,11 +7,13 @@ A simple Python project that fetches real-time weather data from OpenWeatherMap 
 - Uses `requests` to make HTTP calls
 - Parses JSON response and presents data
 - Basic error handling included
+- Text-to-speech functionality. 
 
 ## 🛠 Requirements:
 - Python 3.x
 - `requests`
 - `python-dotenv`
+- `pyttsx3`
 
 ## 🚀 Setup & Run
 ```bash
@@ -27,15 +29,17 @@ python main.py
 
 ## ✅ Output Example:
 ```
-Enter a city name: Khopoli 
+Enter a city name: Khopoli
 
-Weather in Khopoli :
+Weather in Khopoli:
 
-🌡️ Temperature: 26.42°C (Feels like 26.42°C)
-☁️ Condition: light rain
-💧 Humidity: 93%
-💨 Wind Speed: 1.75 m/s
-🌧️ Rain: 0.42 mm in the last hour
+🌡️ Temperature: 25.18°C (Feels like 26.29°C)
+☁️ Condition: moderate rain
+💧 Humidity: 97%
+💨 Wind Speed: 4.98 m/s
+🌧️ Rain: 1.62 mm in the last hour
+
+Thank you for using the Weather App!🙏🏼
 ```
 
 📌 *Note:* Get your API key from https://openweathermap.org/api and put it inside `.env` like:
