@@ -28,6 +28,15 @@ python main.py
 - `.gitignore` — Prevents `.env` from uploading
 
 ## ✅ Output Example:
+### 🔊Voice Preference:
+```
+Choose your preferred voice:
+1. Male 👨
+2. Female 👩
+Enter 1 or 2: 1
+You've selected Male Voice.
+```
+### 🌍Weather details:
 ```
 Enter a city name: Khopoli
 
