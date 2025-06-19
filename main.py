@@ -4,8 +4,34 @@ import requests
 import pyttsx3
 
 engine = pyttsx3.init()
-engine.setProperty('voice', 'com.apple.speech.synthesis.voice.Alex')  # Set voice (change as needed)
-engine.setProperty('rate', 150)  # Set speech rate
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+print("\nChoose your preferred voice:")
+speak("Choose your preferred voice.")
+print("1. Male 👨")
+engine.say("Option one - Male voice.")
+engine.runAndWait()
+print("2. Female 👩")
+engine.say("Option two - Female voice.")
+engine.runAndWait()
+voice_choice = input("Enter 1 or 2: ")
+
+
+# Set voice based on user preference
+voices = engine.getProperty('voices')
+if voice_choice == "1":
+    engine.setProperty('voice', voices[0].id)  # Male
+    print("You have selected Male Voice.\n")
+    speak("Hello! You have selected male voice.")
+else:
+    engine.setProperty('voice', voices[1].id)  # Female
+    print("You have selected Female Voice.\n")
+    speak("Hello! You have selected female voice.")
+
+# Set properties for speech
+engine.setProperty('rate', 180)  # Set speech rate
 engine.setProperty('volume', 1)  # Set volume level (0.0 to 1.0)
 
 speak_text = "Welcome to the Weather App! You can check the weather for any city. Please enter the name of the city."
@@ -20,6 +46,26 @@ if not API_KEY:
     exit()
 
 # Weather App using OpenWeatherMap API
+# Function to return emoji based on weather description
+def get_weather_emoji(description):
+    desc = description.lower()
+    if "clear" in desc:
+        return "☀️"
+    elif "cloud" in desc:
+        return "☁️"
+    elif "rain" in desc:
+        return "🌧️"
+    elif "thunder" in desc:
+        return "⛈️"
+    elif "snow" in desc:
+        return "❄️"
+    elif "mist" in desc or "fog" in desc:
+        return "🌫️"
+    elif "drizzle" in desc:
+        return "🌦️"
+    else:
+        return "🌡️"
+
 def get_weather(city):
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     params = {"q": city, "appid": API_KEY, "units": "metric"}
@@ -39,7 +85,8 @@ def get_weather(city):
         print(f"🌡️ Temperature: {temp}°C (Feels like {feels_like}°C)")
         engine.say(f"Temperature is {temp}°C, Feels like {feels_like}°C")
         engine.runAndWait()
-        print(f"☁️ Condition: {weather}")
+        emoji = get_weather_emoji(weather)
+        print(f"{emoji} Condition: {weather}")
         engine.say(f"Condition is {weather}")
         engine.runAndWait()
         print(f"💧 Humidity: {humidity}%")
@@ -65,5 +112,5 @@ def get_weather(city):
 
 # Main function to run the weather app
 if __name__ == "__main__":
-    city_name = input("Enter a city name: ")
+    city_name = input("Enter a city name 🌆: ")
     get_weather(city_name)
