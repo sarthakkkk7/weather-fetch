@@ -8,7 +8,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-print("\nChoose your preferred voice:")
+print("Choose your preferred voice:")
 speak("Choose your preferred voice.")
 print("1. Male 👨")
 engine.say("Option one - Male voice.")
