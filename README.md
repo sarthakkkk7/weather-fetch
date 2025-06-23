@@ -1,6 +1,8 @@
 # 🌦️ Weather App (Python + OpenWeatherMap API)
 
 A simple Python project that fetches real-time weather data from OpenWeatherMap API and displays temperature, humidity, wind speed, rainfall (in last hour) and weather conditions for a given city.
+![17507019288017904972910296204142](https://github.com/user-attachments/assets/1c941224-7ab7-42dc-b934-ee3418d38d72)
+
 
 ## 🔧 Features:
 - Secure API key handling via `.env`
