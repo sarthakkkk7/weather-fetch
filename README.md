@@ -40,15 +40,16 @@ You've selected Male Voice.
 ```
 ### 🌍Weather details:
 ```
-Enter a city name: Khopoli
+Enter a city name 🌆: Khopoli
+As of 23:02:42
 
-Weather in Khopoli:
+The Weather in Khopoli:
 
-🌡️ Temperature: 25.18°C (Feels like 26.29°C)
-☁️ Condition: moderate rain
-💧 Humidity: 97%
-💨 Wind Speed: 4.98 m/s
-🌧️ Rain: 1.62 mm in the last hour
+🌡️ Temperature: 25.45°C (Feels like 26.37°C)
+☁️ Condition: broken clouds
+💧 Humidity: 89%
+💨 Wind Speed: 1.75 m/s
+🌧️ Rain: 0 mm in the last hour
 
 Thank you for using the Weather App!🙏🏼
 ```
