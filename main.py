@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import requests
 import pyttsx3
+import time
 
 engine = pyttsx3.init()
 def speak(text):
@@ -71,15 +72,17 @@ def get_weather(city):
     params = {"q": city, "appid": API_KEY, "units": "metric"}
 
     response = requests.get(base_url, params=params)
-
+    
     if response.status_code == 200:
         data = response.json()
         weather = data["weather"][0]["description"]
         temp = data["main"]["temp"]
         feels_like = data["main"]["feels_like"]
         humidity = data["main"]["humidity"]
-
-        print(f"\nWeather in {city.title()}:\n")
+        engine.say(f"As of {time.strftime('%H:%M:%S')}") #Tells the time of weather report
+        print(f"As of {time.strftime('%H:%M:%S')}")
+        engine.runAndWait()
+        print(f"\nThe Weather in {city.title()}:\n")
         engine.say(f"Weather in {city.title()}:")
         engine.runAndWait()
         print(f"🌡️ Temperature: {temp}°C (Feels like {feels_like}°C)")
