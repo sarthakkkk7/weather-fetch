@@ -16,6 +16,8 @@ A simple Python project that fetches real-time weather data from OpenWeatherMap 
 - `requests`
 - `python-dotenv`
 - `pyttsx3`
+- `time`
+- `colorama`
 
 ## 🚀 Setup & Run
 ```bash
@@ -40,18 +42,18 @@ You've selected Male Voice.
 ```
 ### 🌍Weather details:
 ```
-Enter a city name 🌆: Khopoli
-As of 23:02:42
+Enter a city name 🌆 : Khopoli
+08:40 PM 
 
 The Weather in Khopoli:
 
-🌡️ Temperature: 25.45°C (Feels like 26.37°C)
-☁️ Condition: broken clouds
-💧 Humidity: 89%
-💨 Wind Speed: 1.75 m/s
-🌧️ Rain: 0 mm in the last hour
+🌡️  Temperature: 26.8°C (Feels like 29.81°C)
+☁️  Condition: overcast clouds
+💧 Humidity: 86%
+💨 Wind Speed: 1.29 m/s
+🌧️  Rain: 0 mm in the last hour
 
-Thank you for using the Weather App!🙏🏼
+Thank you for using the Weather App!🙏
 ```
 
 📌 *Note:* Get your API key from https://openweathermap.org/api and put it inside `.env` like:
