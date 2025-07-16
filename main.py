@@ -3,7 +3,7 @@ import os
 import requests
 import pyttsx3
 import time
-from colorama import init, Fore, Style
+from colorama import init, Fore
 
 init(autoreset=True)
 
