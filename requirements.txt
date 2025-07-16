@@ -3,3 +3,4 @@ os
 requests
 pyttsx3
 time
+python-colorama
