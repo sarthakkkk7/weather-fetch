@@ -3,6 +3,9 @@ import os
 import requests
 import pyttsx3
 import time
+from colorama import init, Fore, Style
+
+init(autoreset=True)
 
 engine = pyttsx3.init()
 def speak(text):
@@ -79,26 +82,26 @@ def get_weather(city):
         temp = data["main"]["temp"]
         feels_like = data["main"]["feels_like"]
         humidity = data["main"]["humidity"]
-        engine.say(f"As of {time.strftime('%H:%M:%S')}") #Tells the time of weather report
-        print(f"As of {time.strftime('%H:%M:%S')}")
+        print(Fore.LIGHTWHITE_EX + f"{time.strftime('%I:%M %p')} ")
+        engine.say(f"As of {time.strftime('%I:%M %p')} ")
         engine.runAndWait()
-        print(f"\nThe Weather in {city.title()}:\n")
+        print(Fore.YELLOW + f"\nThe Weather in {city.title()}:\n")
         engine.say(f"Weather in {city.title()}:")
         engine.runAndWait()
-        print(f"🌡️ Temperature: {temp}°C (Feels like {feels_like}°C)")
-        engine.say(f"Temperature is {temp}°C, Feels like {feels_like}°C")
+        print(Fore.RED + f"🌡️  Temperature: {temp}°C (Feels like {feels_like}°C)")
+        engine.say(f"Temperature is {temp}°C")
         engine.runAndWait()
         emoji = get_weather_emoji(weather)
-        print(f"{emoji} Condition: {weather}")
+        print(f"{emoji}  Condition: {weather}")
         engine.say(f"Condition is {weather}")
         engine.runAndWait()
-        print(f"💧 Humidity: {humidity}%")
+        print(Fore.LIGHTCYAN_EX + f"💧 Humidity: {humidity}%")
         engine.say(f"Humidity is {humidity}%")
         engine.runAndWait()
-        print(f"💨 Wind Speed: {data['wind']['speed']} m/s")
+        print(Fore.LIGHTGREEN_EX + f"💨 Wind Speed: {data['wind']['speed']} m/s")
         engine.say(f"Wind Speed is {data['wind']['speed']} metres per second")
         engine.runAndWait()
-        print(f"🌧️ Rain: {data.get('rain', {}).get('1h', 0)} mm in the last hour")
+        print(Fore.BLUE + f"🌧️  Rain: {data.get('rain', {}).get('1h', 0)} mm in the last hour")
         engine.say(f"Rain is {data.get('rain', {}).get('1h', 0)} mm in the last hour")
         engine.runAndWait()
         print("\nThank you for using the Weather App!🙏🏼")
@@ -115,5 +118,8 @@ def get_weather(city):
 
 # Main function to run the weather app
 if __name__ == "__main__":
-    city_name = input("Enter a city name 🌆: ")
+    city_name = input(Fore.LIGHTMAGENTA_EX + "Enter a city name 🌆 : ")
     get_weather(city_name)
+
+
+
